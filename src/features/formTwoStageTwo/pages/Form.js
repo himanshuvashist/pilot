@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import StageTwoForm from '../components/StageTwoForm';
 
-const Form = ({ activeStep, data, moveStep, updateData }) => (
+const Form = ({ activeStep, state, moveStep, updateData }) => (
   <div>
     <Container>
       <Stepper
@@ -17,14 +17,22 @@ const Form = ({ activeStep, data, moveStep, updateData }) => (
         activeColor={`#343a40`}
         completeColor={`#343a40`}
       />
-      <StageTwoForm moveStep={moveStep} updateData={updateData} data={data} />
+      <StageTwoForm
+        moveStep={moveStep}
+        updateData={updateData}
+        data={state.data}
+      />
     </Container>
   </div>
 );
 
 Form.propTypes = {
   activeStep: PropTypes.oneOfType([PropTypes.number]).isRequired,
-  data: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  state: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
   moveStep: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
   updateData: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
     .isRequired,

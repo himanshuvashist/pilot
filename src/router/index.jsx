@@ -13,7 +13,6 @@ import FormTwoStageThree from '../features/formTwoStageThree/container/FormConta
 
 const Index = (props) => {
   const [activeStep, setStep] = useState(1);
-  const [data, setData] = useState([]);
   const moveStep = () => {
     const temp = activeStep;
     setStep(activeStep + 1);
@@ -21,7 +20,6 @@ const Index = (props) => {
       ? props.history.push('/form2/two')
       : props.history.push('/form2/three');
   };
-  const updateData = (d) => setData([...d]);
 
   return (
     <div>
@@ -31,41 +29,26 @@ const Index = (props) => {
         <PrivateRoute component={FormContainer} path={'/form'} exact />
         <PrivateRoute
           component={() => (
-            <FormTwoStageOne
-              activeStep={activeStep}
-              moveStep={moveStep}
-              updateData={updateData}
-            />
+            <FormTwoStageOne activeStep={activeStep} moveStep={moveStep} />
           )}
           path={'/form2/one'}
           exact
         />
         <PrivateRoute
           component={() => (
-            <FormTwoStageTwo
-              activeStep={activeStep}
-              moveStep={moveStep}
-              data={data}
-              updateData={updateData}
-            />
+            <FormTwoStageTwo activeStep={activeStep} moveStep={moveStep} />
           )}
           path={'/form2/two'}
           exact
         />
         <PrivateRoute
-          component={() => (
-            <FormTwoStageThree activeStep={activeStep} data={data} />
-          )}
+          component={() => <FormTwoStageThree activeStep={activeStep} />}
           path={'/form2/three'}
           exact
         />
         <PrivateRoute
           component={() => (
-            <FormTwoStageOne
-              activeStep={activeStep}
-              moveStep={moveStep}
-              updateData={updateData}
-            />
+            <FormTwoStageOne activeStep={activeStep} moveStep={moveStep} />
           )}
           path={'/form2'}
           exact

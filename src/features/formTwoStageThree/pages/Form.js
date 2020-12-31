@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import StageThreeForm from '../components/StageThreeForm';
 
-const Form = ({ activeStep, data }) => (
+const Form = ({ activeStep, state }) => (
   <div>
     <Container>
       <Stepper
@@ -17,14 +17,18 @@ const Form = ({ activeStep, data }) => (
         activeColor={`#343a40`}
         completeColor={`#343a40`}
       />
-      <StageThreeForm data={data} />
+      <StageThreeForm data={state.data} />
     </Container>
   </div>
 );
 
 Form.propTypes = {
   activeStep: PropTypes.oneOfType([PropTypes.number]).isRequired,
-  data: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  state: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
 };
 
 export default Form;

@@ -1,5 +1,15 @@
-import React from 'react';
-import Form from '../pages/Form';
+import { connect } from 'react-redux';
+import FormContainer from '../pages/Form';
+import { updateData } from '../../../actions/formTwoActions';
 
-const FormContainer = (props) => <Form {...props} />;
-export default FormContainer;
+const mapStateToProps = (state) => ({
+  state: state.formTwoReducer,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  updateData: (payload) => {
+    dispatch(updateData(payload));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);
