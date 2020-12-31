@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form2 {
+  border-radius: 5px;
+  border-style: solid;
+  padding: 5rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.form2submitButton {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form1 {
+  margin-top: 20vh;
+  height: 50vh;
+}
+
+.form1bu {
+  padding: 1rem 2rem;
+  width: 35%;
+  margin: 1vh auto;
+}
+
+.photoCard {
+  min-height: 27vh;
+  margin: 5rem auto;
+  border-radius: 10px;
+  border-style: dashed;
+  border-color: #343a40;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.photoCard:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.dropArea {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.imgPreview {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  max-height: inherit;
+}
+
+.star {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+}
+
+.suggestions{
+  z-index: 100;
+}
+
+.react-autosuggest__input{
+  width:100%;
+}
+
+.login{
+  margin-top:25vh;
+}
+
+.logout{
+  margin-top:5vh;
+}
